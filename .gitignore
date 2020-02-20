@@ -72,3 +72,4 @@ Session.vim
 .netrwhist
 *~
 doc/tags
+.DS_Store

@@ -59,8 +59,8 @@ class DiscordPlugin(object):
             self.activate = 1
         if not self.activity:
             self.activity["assets"] = {
-                "large_text": "The One True Editor",
-                "large_image": "neovim"
+                "large_text": "Vim Is a Powerful Editor",
+                "small_image": "neovim"
             }
             self.activity["timestamps"] = {"start": int(time())}
         if not self.lock:
@@ -112,7 +112,7 @@ class DiscordPlugin(object):
             if len(ft) == 1:
                 ft = "lang_{}".format(ft)
             self.activity["assets"]["small_text"] = ft.title()
-            self.activity["assets"]["small_image"] = ft
+            self.activity["assets"]["large_image"] = ft
         if workspace:
             self.activity["state"] = "Working on {}".format(workspace)
         self.discord.set_activity(self.activity, self.vim.call("getpid"))
